@@ -1,0 +1,9 @@
+templates:
+  message_flowdock:
+    "{text}{~n}
+     {#parts}
+     {?title}{title}{~n}{/title}
+     {?text}{text}{~n}{/text}
+     {@c}{~n}{@table}{#fields}{/fields}{/table}{/c}{~n}
+    ------------------------------------
+     {/parts}"

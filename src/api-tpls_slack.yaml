@@ -1,0 +1,59 @@
+templates:
+  message_slack: |
+    {
+      "text": "{text}",
+      {?parts}
+      "attachments":[
+        {#parts}
+        {
+          "title": "{title}",
+          "color": "{color}",
+          "text": "{.text}",
+          {?title_link}"title_link": "{title_link}",{/title_link}
+          {?image_url}"image_url": "{image_url}",{/image_url}
+          {?thumb_url}"thumb_url": "{thumb_url}",{/thumb_url}
+          {?fields}
+          "fields":[
+            {#fields}
+            {
+              "title": "{.title}",
+              "value": "{value}",
+              "short": "{?.short}{short}{:else}true{/.short}"
+            }
+            {@sep},{/sep}
+            {/fields}
+          ],
+          {/fields}
+          {?actions}
+          "actions":[
+            {#actions}
+            {
+              "name": "{name}",
+              "text": "{.text}",
+              "style": {?style}"{style}"{:else}"default"{/style},
+              "type": "button",
+              "value": "{.value}"
+            }
+            {@sep},{/sep}
+            {/actions}
+          ],
+          {/actions}
+          {?footer}"footer": "{footer}",{/footer}
+          {?footer_icon}"footer_icon": "{footer_icon}",{/footer_icon}
+          "mrkdwn_in": ["pretext", "text", "fields"]
+        }
+        {@sep},{/sep}
+        {/parts}
+      ],
+      {/parts}
+      "mrkdwn": true
+    }
+widgets:
+  list: |
+    {#items}
+    {~s}*{~s}{.}{~n}
+    {/items}
+  nlist: |
+    {#items}
+    {~s}{$idx|inc}.{~s}{.}{~n}
+    {/items}

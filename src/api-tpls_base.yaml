@@ -1,0 +1,9 @@
+templates:
+  message_base:
+    "{text}{~n}
+     {#parts}
+     {?title}{title}{~n}{/title}
+     {?text}{text}{~n}{/text}
+     {@table}{#fields}{/fields}{/table}
+     ------------------------------------
+     {/parts}"

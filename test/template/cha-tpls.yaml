@@ -1,0 +1,103 @@
+labels:
+  severity: Severity
+  affectedService: Affected Service
+  cobot: Cobot
+  service: Service
+  from-incident: From Incident
+  fortify: Fortify
+
+style:
+  colors:
+    high: danger
+    OK: good
+
+templates:
+  kick_off_warroom_test: |
+    {
+      "text": "Incident {@c}{id}{/c} kicked off the war room{~n}{>"cha.api.widget.list" items=users/}",
+      "parts":[
+        {
+          "title": "{title}",
+          "title_url": "{\@url}",
+          "text": "{description}",
+          "color": "{severity|color}",
+          "fields": [
+             {
+               "title": "{@label t="severity"/}",
+               "value": "{severity}"
+             },
+             {
+               "title": "{@label t="affectedService"/}",
+               "value": "{affectedService.name}"
+             }
+          ]
+        }
+      ]
+    }
+  kick_off_warroom: |
+    {
+      "text": "{@t val="Namespace"/} {@c}{id}{/c} {@t val="kicked off"/} {@t val="the war room"/}{~n}",
+      "parts":[
+        {
+          "title": "{title}",
+          "text": "{description}",
+          "color": "{severity|color}",
+          "fields": [
+             {
+               "title": "{@label t="severity"/}",
+               "value": "{severity}"
+             },
+             {
+               "title": "{@label t="affectedService"/}",
+               "value": "{affectedService.name}"
+             }
+          ]
+        }
+      ]
+    }
+  creating_defect: |
+    {
+      "text": "{@label t="cobot"/} is creating a new {@c}Defect{/c} from {@c}Incdent{/c} {@c}{id}{/c}..."
+    }
+  creating_release: |
+    {
+      "text": "{@label t="cobot"/} is creating a new {@c}Release{/c} including {@c}Defect{/c} {@c}{id}{/c}..."
+    }
+  new_defect: |
+    {
+      "text": "New defect {@c}{id}{/c} was created by {@label t="cobot"/}",
+      "parts":[
+        {
+          "title": "{title}",
+          "text": "{description}",
+          "fields":[
+            {
+              "title":"{@label t="service"/}",
+              "value": "{service.name}"
+            },
+            {
+              "title": "{@label t="from-incident"/}",
+              "value": "{@c}{from.incident}{/c}"
+            }
+          ]
+        }
+      ]
+    }
+  new_release: |
+    {
+      "text": "New Release {@c}{id}{/c}-{@b}{name}{/b} was created by {@label t="cobot"/}{~n} Including following defects {~n}{>"cha.api.widget.list" items=defects/}"
+    }
+  scan_started: |
+    {
+      "text": "{@label t="fortify"/} scan {@c}{id}{/c} started. {~n} For `Release` {@b}{targetRelease.name}{/b}-{@c}{targetRelease.id}{/c}"
+    }
+  scan_finished: |
+    {
+      "text": "{@label t="fortify"/} scan {@c}{id}{/c} Finished",
+      "parts":[
+        {
+          "text": "For `Release` {@b}{targetRelease.name}{/b} - {@c}{targetRelease.id}{/c}",
+          "color": "{result|color}"
+        }
+      ]
+    }

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and limitations 
 # Cha
 A framework/toolkit for conversational UI. For detail about `Cha`, please see [Cha Wiki](https://github.hpe.com/IncubationLab/cha/wiki)
 
-> Cha means tea in Chinese and Japanese language
+> Cha means tea in Chinese, Japanese and Korean language
 ![Logo](https://raw.github.hpe.com/wiki/IncubationLab/cha/Cha_small.png)
 
 > Master piece by [mmishalov](https://hpesw-chatops-dev.slack.com/team/mmishalov)

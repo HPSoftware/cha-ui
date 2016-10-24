@@ -12,7 +12,7 @@ See the License for the specific language governing permissions and limitations 
 
 
 # Cha
-A framework/toolkit for conversational UI. For detail about `Cha`, please see [Cha Wiki](https://github.hpe.com/IncubationLab/cha/wiki)
+A framework/toolkit for conversational UI. For detail about `Cha`, please see [Cha Wiki](https://github.com/HPSoftware/cha/wiki)
 
 > Cha means tea in Chinese and Japanese language
 ![Logo](https://raw.github.hpe.com/wiki/IncubationLab/cha/Cha_small.png)
@@ -26,10 +26,10 @@ A framework/toolkit for conversational UI. For detail about `Cha`, please see [C
 
 ```json
 "dependencies":{
-  "cha": "git+https://github.hpe.com/IncubationLab/cha.git"
+  "cha": "git+https://github.com/HPSoftware/cha.git"
 }
 ```
 
 You don't need to add `Cha` into `hubot`'s `external-scripts` file.
 
-For detail, please check `Cha` [wiki](https://github.hpe.com/IncubationLab/cha/wiki)
+For detail, please check `Cha` [wiki](https://github.com/HPSoftware/cha/wiki)

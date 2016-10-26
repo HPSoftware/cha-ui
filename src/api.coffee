@@ -15,7 +15,7 @@ _ = require 'lodash'
 Dust = require 'dustjs-helpers'
 Promise = require "bluebird"
 Winston = require('winston')
-Winston.level = process.env.CHA_LOGGER_LEVEL || 'warn'
+Winston.level = process.env.CHA_UI_LOGGER_LEVEL || 'warn'
 yaml = require 'node-yaml'
 
 # The message class
@@ -183,8 +183,8 @@ loadCfg = (path, ns)->
     Winston.error 'Failed to load yaml file: #{path}'
 
 renderMessage = (msg, adapterName)->
-    Winston.debug "Render message cha.api.message_#{adapterName}"
-    T.render("cha.api.message_#{adapterName}", msg.data)
+    Winston.debug "Render message cha-ui.api.message_#{adapterName}"
+    T.render("cha-ui.api.message_#{adapterName}", msg.data)
 
 
 processMessage = (strs, robot, fx)->
@@ -200,12 +200,12 @@ processMessage = (strs, robot, fx)->
 
 
 initHubot = (robot)->
-  if robot._chaApiReady
+  if robot._chaUIApiReady
     return
   path = require("path").join(__dirname, "./api-tpls_#{robot.adapterName}.yaml")
-  loadCfg path, "cha.api"
+  loadCfg path, "cha-ui.api"
   path = require("path").join(__dirname, "./api-tpls_base.yaml")
-  loadCfg path, "cha.api"
+  loadCfg path, "cha-ui.api"
 
   robot.send = _.wrap robot.send, (func, env, strs...)->
     if strs.length >0
@@ -230,7 +230,7 @@ initHubot = (robot)->
 
         return
     next()
-  robot._chaApiReady = true
+  robot._chaUIApiReady = true
 
 module.exports = {
   Message,

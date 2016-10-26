@@ -15,12 +15,12 @@ table = require 'easy-table'
 I18 = require 'i18next'
 Backend = require 'i18next-sync-fs-backend'
 
-# environment variable CHA_LOCALE AND CHA_NAMESPACE
+# environment variable CHA_UI_LOCALE AND CHA_UI_NAMESPACE
 Init_optinos =
   debug: false
-  ns: process.env.CHA_NAMESPACE || 'translation'
+  ns: process.env.CHA_UI_NAMESPACE || 'translation'
   keySeparator: false,
-  lng: process.env.CHA_LOCALE || 'en-US'
+  lng: process.env.CHA_UI_LOCALE || 'en-US'
   fallbackLng: 'en-US'
   backend:
     loadPath: 'locales/{{lng}}/{{ns}}.json'

@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and limitations 
 
 Api = require ('./api')
 Winston = require('winston')
-Winston.level = process.env.CHA_LOGGER_LEVEL || 'warn'
+Winston.level = process.env.CHA_UI_LOGGER_LEVEL || 'warn'
 _ = require 'lodash'
 
 class Message
@@ -69,7 +69,7 @@ processMessage = (strs, robot, fx)->
 initHubot = (robot)->
   Api.initHubot robot
 
-  if robot._chaFrameworkReady
+  if robot._chaUIFrameworkReady
     return
   robot.send = _.wrap robot.send, (func, env, strs...)->
     if strs.length >0
@@ -93,12 +93,12 @@ initHubot = (robot)->
           context.response[context.method](s)
         return
       else
-        robot.logger.debug "Not a Cha Message"
+        robot.logger.debug "Not a Cha-UI Message"
     next()
-  robot._chaFrameworkReady = true
+  robot._chaUIFrameworkReady = true
 
-init = (chaCfg, tool)->
-  Api.loadCfg chaCfg
+init = (chaUICfg, tool)->
+  Api.loadCfg chaUICfg
   (require "./ext/framework_base")(Api.Dust)
   if tool is 'slack' || tool is 'flowdock'
     (require "./ext/framework_#{tool}")(Api.Dust)

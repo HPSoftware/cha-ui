@@ -11,25 +11,25 @@ See the License for the specific language governing permissions and limitations 
 ###
 
 
-# Cha
-A framework/toolkit for conversational UI. For detail about `Cha`, please see [Cha Wiki](https://github.com/HPSoftware/cha/wiki)
+# Cha-UI
+A framework/toolkit for conversational UI. For detail about `Cha-UI`, please see [Cha-UI Wiki](https://github.com/HPSoftware/cha/wiki)
 
-> Cha means tea in Chinese and Japanese language
-![Logo](https://github.com/HPSoftware/cha/wiki/Cha_small.png)
+> Cha-UI means tea in Chinese and Japanese language
+![Logo](https://github.com/HPSoftware/cha-ui/wiki/Cha_small.png)
 
 > Master piece by [mmishalov](https://hpesw-chatops-dev.slack.com/team/mmishalov)
 
 ## Usage
 
-`Cha` is released as an `npm` package. You need to add it to your `package.json`
+`Cha-UI` is released as an `npm` package. You need to add it to your `package.json`
 > At current moment, you can use `git+http` for `cha`
 
 ```json
 "dependencies":{
-  "cha": "git+https://github.com/HPSoftware/cha.git"
+  "cha-ui": "git+https://github.com/HPSoftware/cha-ui.git"
 }
 ```
 
-You don't need to add `Cha` into `hubot`'s `external-scripts` file.
+You don't need to add `Cha-UI` into `hubot`'s `external-scripts` file.
 
-For detail, please check `Cha` [wiki](https://github.com/HPSoftware/cha/wiki)
+For detail, please check `Cha-UI` [wiki](https://github.com/HPSoftware/cha-ui/wiki)

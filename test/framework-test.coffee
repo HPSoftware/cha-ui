@@ -1,20 +1,3 @@
-assert = require 'assert'
-fs = require 'fs-extra'
-async = require 'async'
-Framework = require '../src/framework.coffee'
-process.env.CHA_LOCALE='zh-CN'
-robot = {}
-robot.adapterName = 'slack'
-robot.logger = {}
-robot.logger.debug = (str)->
-  console.log str
-robot.send = (env, strings...)  ->
-  assert.ok strings[0].text.includes "中   文"
-
-
-
-robot.responseMiddleware = (middleware) ->
-    return undefined
 ###
 Copyright 2016 Hewlett-Packard Development Company, L.P.
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,6 +10,24 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and limitations under the License.
 ###
 
+
+assert = require 'assert'
+fs = require 'fs-extra'
+async = require 'async'
+Framework = require '../src/framework.coffee'
+process.env.CHA_UI_LOCALE='zh-CN'
+process.env.CHA_LOGGER_LEVEL='debug'
+# process.env.CHA_UI_LOCALE='zh-CN'
+robot = {}
+robot.adapterName = 'slack'
+robot.logger = {}
+robot.logger.debug = (str)->
+  console.log str
+robot.send = (env, strings...)  ->
+  assert.ok strings[0].text.includes "中文"
+
+robot.responseMiddleware = (middleware) ->
+    return undefined
 
 Framework.initHubot robot
 path = require("path").join __dirname, "./template/cha-tpls.yaml"

@@ -12,7 +12,7 @@ See the License for the specific language governing permissions and limitations 
 
 
 # Cha-UI
-A framework/toolkit for conversational UI. For detail about `Cha-UI`, please see [Cha-UI Wiki](https://github.com/HPSoftware/cha/wiki)
+A framework/toolkit for conversational UI. For detail about `Cha-UI`, please see [Cha-UI Wiki](https://github.com/HPSoftware/cha-ui)
 
 > Cha-UI means tea in Chinese and Japanese language
 ![Logo](https://github.com/HPSoftware/cha-ui/wiki/Cha_small.png)
@@ -26,7 +26,7 @@ A framework/toolkit for conversational UI. For detail about `Cha-UI`, please see
 
 ```json
 "dependencies":{
-  "cha-ui": "git+https://github.com/HPSoftware/cha-ui.git"
+  "cha-ui": "0.0.2"
 }
 ```
 

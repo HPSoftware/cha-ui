@@ -1,7 +1,13 @@
 {
   "name": "cha-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A framework/toolkit for conversational UI",
+  "keywords":[
+    "chatops",
+    "ui",
+    "chat",
+    "hubot"
+  ],
   "main": "index.coffee",
   "dependencies": {
     "bluebird": "^3.4.1",
@@ -35,8 +41,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.hpe.com:IncubationLab/cha.git"
+    "url": "https://github.com/HPSoftware/cha-ui.git"
   },
-  "author": "keke",
-  "license": "ISC"
+  "bugs":{
+    "url":"https://github.com/HPSoftware/cha-ui/issues"
+  },
+  "author": "keke",  
+  "license": "Apache-2.0"
 }

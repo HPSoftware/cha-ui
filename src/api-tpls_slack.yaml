@@ -29,7 +29,7 @@ templates:
             {
               "title": "{.title}",
               "value": "{value}",
-              "short": "{?.short}{short}{:else}true{/.short}"
+              "short": {?.short}{short}{:else}true{/.short}
             }
             {@sep},{/sep}
             {/fields}

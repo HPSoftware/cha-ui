@@ -26,7 +26,7 @@ A framework/toolkit for conversational UI. For detail about `Cha-UI`, please see
 
 ```json
 "dependencies":{
-  "cha-ui": "0.0.2"
+  "cha-ui": "0.0.3"
 }
 ```
 

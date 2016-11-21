@@ -22,11 +22,10 @@ A framework/toolkit for conversational UI. For detail about `Cha-UI`, please see
 ## Usage
 
 `Cha-UI` is released as an `npm` package. You need to add it to your `package.json`
-> At current moment, you can use `git+http` for `cha`
 
 ```json
 "dependencies":{
-  "cha-ui": "0.0.3"
+  "cha-ui": "0.0.4"
 }
 ```
 
